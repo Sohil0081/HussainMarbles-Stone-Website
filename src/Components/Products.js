@@ -15,7 +15,7 @@ function Products({ type = "All" }) {
 
             try {
 
-                const response = await fetch("public/Products.json");
+                const response = await fetch("/Products.json");
                 const data = await response.json();
 
                 setProducts(data);

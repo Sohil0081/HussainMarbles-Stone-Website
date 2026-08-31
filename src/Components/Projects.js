@@ -11,7 +11,7 @@ function Projects() {
 
     useEffect(() => {
 
-        fetch("public/Projects.json")
+        fetch("/Projects.json")
             .then((response) => {
 
                 if (!response.ok) {
