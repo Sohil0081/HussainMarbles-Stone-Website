@@ -5,6 +5,7 @@ import WhatsAppButton from "../Components/WhatsAppButton";
 import HomeContact from "../Components/HomeContact";
 import Footer from "../Components/Footer";
 // import HomeAbout from "../Components/HomeAbout";
+import "./Home.css";
 
 
 
