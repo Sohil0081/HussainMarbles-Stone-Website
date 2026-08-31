@@ -1,0 +1,357 @@
+/* =========================
+   Slider
+========================= */
+
+.slider {
+    width: 100%;
+    height: 500px;
+
+    position: relative;
+    overflow: hidden;
+
+    touch-action: pan-y;
+    user-select: none;
+}
+
+
+/* =========================
+   Track
+========================= */
+
+.slider-track {
+    display: flex;
+
+    width: 100%;
+    height: 100%;
+
+    transition: transform 0.5s ease-in-out;
+}
+
+
+/* =========================
+   Slide
+========================= */
+
+.slide {
+    position: relative;
+
+    min-width: 100%;
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
+}
+
+
+/* =========================
+   Image
+========================= */
+
+.slide img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    pointer-events: none;
+}
+
+
+/* =========================
+   Overlay
+========================= */
+
+.slide::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.65),
+        rgba(0, 0, 0, 0.25),
+        rgba(0, 0, 0, 0)
+    );
+
+    pointer-events: none;
+}
+
+
+/* =========================
+   CONTENT
+========================= */
+
+.slide-content {
+
+    position: absolute;
+
+    z-index: 2;
+
+    left: 7%;
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: 420px;
+
+    text-align: left;
+
+    color: white;
+}
+
+
+/* Heading */
+
+.slide-content h1 {
+
+    margin: 0 0 15px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 55px;
+
+    font-weight: 600;
+
+    letter-spacing: 2px;
+
+    text-align: left;
+}
+
+
+/* Paragraph */
+
+.slide-content p {
+
+    margin: 0 0 25px;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 19px;
+
+    line-height: 1.5;
+
+    text-align: left;
+}
+
+
+/* Button */
+
+.slide-content button {
+
+    display: block;
+
+    padding: 13px 25px;
+
+    border: none;
+    border-radius: 3px;
+
+    background: #9a7b4f;
+
+    color: white;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    text-align: center;
+}
+
+
+/* =========================
+   Dots
+========================= */
+
+.dots {
+
+    position: absolute;
+
+    z-index: 10;
+
+    bottom: 18px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+
+.dot {
+
+    width: 9px;
+    height: 9px;
+
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.6);
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+.dot.active {
+
+    width: 25px;
+
+    border-radius: 10px;
+
+    background: white;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 768px) {
+
+    .slider {
+        height: 420px;
+    }
+
+    .slide-content {
+
+        left: 6%;
+
+        width: 350px;
+
+        text-align: left;
+    }
+
+    .slide-content h1 {
+
+        font-size: 42px;
+
+        text-align: left;
+    }
+
+    .slide-content p {
+
+        font-size: 16px;
+
+        text-align: left;
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 500px) {
+
+    .slider {
+
+        height: 300px;
+    }
+
+
+    .slide-content {
+
+        left: 25px;
+
+        top: 50%;
+
+        width: 240px;
+
+        transform: translateY(-50%);
+
+        text-align: left;
+    }
+
+
+    .slide-content h1 {
+
+        font-size: 28px;
+
+        line-height: 1.15;
+
+        letter-spacing: 1px;
+
+        margin-bottom: 8px;
+
+        text-align: left;
+    }
+
+
+    .slide-content p {
+
+        font-size: 13px;
+
+        line-height: 1.4;
+
+        margin-bottom: 15px;
+
+        max-width: 220px;
+
+        text-align: left;
+    }
+
+
+    .slide-content button {
+
+        padding: 9px 15px;
+
+        font-size: 12px;
+    }
+
+
+    .dots {
+
+        bottom: 10px;
+    }
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 360px) {
+
+    .slider {
+
+        height: 270px;
+    }
+
+
+    .slide-content {
+
+        left: 20px;
+
+        width: 210px;
+    }
+
+
+    .slide-content h1 {
+
+        font-size: 24px;
+    }
+
+
+    .slide-content p {
+
+        font-size: 12px;
+
+        max-width: 190px;
+    }
+
+
+    .slide-content button {
+
+        padding: 8px 12px;
+
+        font-size: 11px;
+    }
+}
