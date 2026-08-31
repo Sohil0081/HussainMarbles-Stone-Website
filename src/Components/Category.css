@@ -1,0 +1,162 @@
+/* =========================
+   CATEGORY HEADING
+========================= */
+
+.heading {
+    width: 100%;
+
+    margin-top: 35px;
+    margin-bottom: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+}
+
+
+/* =========================
+   PREMIUM CATEGORY TITLE
+========================= */
+
+.heading h1 {
+    margin: 0;
+    padding: 0;
+
+    color: #292622;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    font-size: clamp(30px, 4vw, 44px);
+
+    font-weight: 400;
+
+    line-height: 1.1;
+
+    letter-spacing: -0.8px;
+
+    text-align: center;
+}
+
+
+/* =========================
+   CATEGORY CONTAINER
+========================= */
+
+.category-container {
+    width: 90%;
+    max-width: 1200px;
+
+    margin: 30px auto;
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 30px;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+    .heading {
+        width: 100%;
+
+        margin-top: 20px;
+
+        display: flex;
+
+        justify-content: center;
+        align-items: center;
+
+        text-align: center;
+    }
+
+
+    .heading h1 {
+        width: 100%;
+
+        margin: 0;
+
+        text-align: center;
+    }
+
+
+    .category-container {
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 20px;
+    }
+}
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .heading {
+        margin-top: 28px;
+        margin-bottom: 8px;
+    }
+
+    .heading h1 {
+        font-family:
+            Georgia,
+            "Times New Roman",
+            serif;
+
+        font-size: 30px;
+
+        font-weight: 400;
+
+        letter-spacing: -0.5px;
+
+        line-height: 1.1;
+    }
+
+    .category-container {
+        width: 94%;
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+
+        gap: 14px;
+
+        margin: 18px auto;
+    }
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 380px) {
+
+    .heading {
+        margin-top: 24px;
+    }
+
+    .heading h1 {
+        font-size: 27px;
+
+        letter-spacing: -0.4px;
+    }
+
+    .category-container {
+        width: 94%;
+
+        gap: 10px;
+    }
+}

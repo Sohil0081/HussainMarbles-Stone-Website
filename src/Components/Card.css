@@ -1,198 +1,384 @@
 /* =========================
-   Product Card
+   PRODUCT CARD
+   PROJECT CARD STYLE
 ========================= */
 
 .post-card {
     width: 100%;
     max-width: 330px;
 
-    background: #ffffff;
-
-    border: 1px solid #e5e2dc;
-    border-radius: 10px;
-
     overflow: hidden;
 
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+    background: #ffffff;
 
-    transition: transform 0.3s ease,
-                box-shadow 0.3s ease;
+    border: 1px solid #e5ded3;
 
-    display: flex;
-    flex-direction: column;
+    border-radius: 10px;
+
+    box-shadow:
+        0 8px 28px rgba(0, 0, 0, 0.06);
+
+    cursor: pointer;
+
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
 }
 
 
-/* Hover */
+/* =========================
+   CARD HOVER
+========================= */
 
 .post-card:hover {
     transform: translateY(-7px);
 
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    box-shadow:
+        0 18px 40px rgba(0, 0, 0, 0.11);
 }
 
 
 /* =========================
-   Product Image
+   PRODUCT IMAGE
 ========================= */
 
 .post-image {
     width: 100%;
-    height: 230px;
-
-    object-fit: cover;
+    height: 260px;
 
     display: block;
 
-    transition: transform 0.4s ease;
-}
+    object-fit: cover;
 
+    background: #eee;
 
-/* Image zoom */
-
-.post-card:hover .post-image {
-    transform: scale(1.05);
+    transition:
+        transform 0.6s ease;
 }
 
 
 /* =========================
-   Card Body
+   IMAGE HOVER
+========================= */
+
+.post-card:hover .post-image {
+    transform: scale(1.06);
+}
+
+
+/* =========================
+   CARD BODY
 ========================= */
 
 .post-body {
-    padding: 20px;
+    padding: 22px 22px 25px;
 
-    display: flex;
-    flex-direction: column;
-
-    flex: 1;
+    background: #ffffff;
 }
 
 
 /* =========================
-   Product Name
+   GOLD DECORATIVE LINE
+========================= */
+
+.post-body::before {
+    content: "";
+
+    width: 35px;
+    height: 1px;
+
+    margin-bottom: 12px;
+
+    display: block;
+
+    background: #9a7b4f;
+
+    opacity: 0.8;
+}
+
+
+/* =========================
+   PRODUCT TITLE
 ========================= */
 
 .post-title {
-    margin: 0 0 10px;
+    margin: 8px 0 10px;
 
-    font-family: Georgia, "Times New Roman", serif;
+    color: #292929;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
 
     font-size: 23px;
 
-    font-weight: 600;
+    font-weight: 500;
 
-    color: #222;
-
-    line-height: 1.3;
+    line-height: 1.25;
 }
 
 
 /* =========================
-   Origin
+   DESCRIPTION
 ========================= */
 
 .post-description {
-    margin: 5px 0;
+    margin: 0 0 8px;
 
-    font-family: Arial, Helvetica, sans-serif;
+    color: #777;
 
-    font-size: 14px;
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
 
-    color: #666;
+    font-size: 12px;
+
+    line-height: 1.7;
 }
 
 
-/* Rating */
+/* =========================
+   RATING
+========================= */
 
 .post-description:last-of-type {
     display: inline-block;
 
-    width: fit-content;
+    margin-top: 5px;
 
-    margin-top: 10px;
-    padding: 5px 9px;
+    margin-bottom: 18px;
 
-    border-radius: 4px;
+    padding: 5px 10px;
 
-    background: #f3eee6;
+    background: #faf6ef;
+
+    border: 1px solid #e5d9c9;
+
+    border-radius: 5px;
 
     color: #8b6b3f;
 
+    font-size: 11px;
+
     font-weight: 600;
+
+    line-height: 1.2;
 }
 
 
 /* =========================
-   View Button
+   VIEW DETAILS BUTTON
 ========================= */
 
 .read-more {
-    display: block;
-
-    margin-top: 18px;
+    width: 100%;
 
     padding: 11px 18px;
 
-    text-align: center;
+    display: inline-flex;
 
-    text-decoration: none;
+    align-items: center;
+
+    justify-content: center;
 
     background: #9a7b4f;
 
-    color: white;
+    color: #ffffff;
 
-    border-radius: 4px;
+    border: 1px solid #9a7b4f;
 
-    font-family: Arial, Helvetica, sans-serif;
+    border-radius: 5px;
 
-    font-size: 14px;
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
 
-    font-weight: 500;
+    font-size: 11px;
 
-    transition: background 0.3s ease,
-                transform 0.3s ease;
-}
+    font-weight: 600;
 
+    letter-spacing: 0.5px;
 
-.read-more:hover {
-    background: #795d3b;
+    cursor: pointer;
 
-    transform: translateY(-2px);
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 
 /* =========================
-   Responsive
+   BUTTON HOVER
+========================= */
+
+.read-more:hover {
+    background: #7d603d;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 8px 22px
+        rgba(125, 96, 61, 0.25);
+}
+
+
+/* =========================
+   BUTTON ACTIVE
+========================= */
+
+.read-more:active {
+    transform: translateY(-1px);
+}
+
+
+/* =========================
+   TABLET
 ========================= */
 
 @media (max-width: 768px) {
 
     .post-card {
         max-width: 100%;
+
+        border-radius: 10px;
     }
+
 
     .post-image {
-        height: 210px;
+        height: 240px;
     }
 
-    .post-title {
-        font-size: 21px;
-    }
-}
-
-
-@media (max-width: 500px) {
-
-    .post-image {
-        height: 200px;
-    }
 
     .post-body {
-        padding: 16px;
+        padding: 19px;
     }
+
 
     .post-title {
         font-size: 20px;
     }
+
+
+    .post-description {
+        font-size: 12px;
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .post-card {
+        width: 100%;
+
+        max-width: none;
+
+        border-radius: 8px;
+    }
+
+
+    .post-image {
+        width: 100%;
+
+        height: 170px;
+    }
+
+
+    .post-body {
+        padding: 15px;
+    }
+
+
+    .post-body::before {
+        width: 25px;
+
+        margin-bottom: 8px;
+    }
+
+
+    .post-title {
+        margin: 6px 0 8px;
+
+        font-size: 17px;
+
+        line-height: 1.25;
+    }
+
+
+    .post-description {
+        margin-bottom: 6px;
+
+        font-size: 10px;
+
+        line-height: 1.6;
+    }
+
+
+    .post-description:last-of-type {
+        margin-top: 5px;
+
+        margin-bottom: 12px;
+
+        padding: 4px 7px;
+
+        font-size: 9px;
+    }
+
+
+    .read-more {
+        padding: 9px 10px;
+
+        font-size: 10px;
+
+        border-radius: 4px;
+    }
+
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 380px) {
+
+    .post-image {
+        height: 150px;
+    }
+
+
+    .post-body {
+        padding: 12px;
+    }
+
+
+    .post-title {
+        font-size: 15px;
+    }
+
+
+    .post-description {
+        font-size: 9px;
+    }
+
+
+    .post-description:last-of-type {
+        font-size: 8px;
+    }
+
+
+    .read-more {
+        padding: 8px;
+
+        font-size: 9px;
+    }
+
 }

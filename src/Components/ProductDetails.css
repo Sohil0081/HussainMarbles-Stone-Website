@@ -1,0 +1,342 @@
+/* =========================
+   PRODUCT DETAILS
+========================= */
+
+.product-details {
+    width: 100%;
+    min-height: 100vh;
+    padding: 50px 5%;
+    background: #fff;
+    color: #292929;
+}
+
+
+/* =========================
+   BACK BUTTON
+========================= */
+
+.back-button {
+    border: none;
+    background: transparent;
+
+    font-size: 15px;
+    color: #555;
+
+    cursor: pointer;
+
+    margin-bottom: 35px;
+
+    transition: 0.3s ease;
+}
+
+.back-button:hover {
+    color: #9a7b4f;
+}
+
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.product-details-container {
+    max-width: 1200px;
+
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 70px;
+
+    align-items: center;
+}
+
+
+/* =========================
+   IMAGE
+========================= */
+
+.product-details-image {
+    width: 100%;
+    height: 550px;
+
+    overflow: hidden;
+
+    background: #f5f3ef;
+}
+
+
+.product-details-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition: transform 0.5s ease;
+}
+
+
+.product-details-image:hover img {
+    transform: scale(1.03);
+}
+
+
+/* =========================
+   CONTENT
+========================= */
+
+.product-details-content {
+    padding: 20px 0;
+}
+
+
+.product-category {
+    display: inline-block;
+
+    margin-bottom: 15px;
+
+    color: #9a7b4f;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+}
+
+
+.product-details-content h1 {
+    margin: 0 0 18px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(38px, 5vw, 60px);
+
+    font-weight: 500;
+
+    line-height: 1.1;
+
+    color: #252525;
+}
+
+
+/* =========================
+   RATING
+========================= */
+
+.product-rating {
+    margin-bottom: 25px;
+
+    font-size: 15px;
+
+    color: #555;
+}
+
+
+/* =========================
+   DESCRIPTION
+========================= */
+
+.product-description {
+    max-width: 550px;
+
+    margin: 0 0 25px;
+
+    color: #666;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================
+   PRICE
+========================= */
+
+.product-price {
+    margin-bottom: 30px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 32px;
+
+    color: #9a7b4f;
+}
+
+
+.product-price span {
+    font-family: Arial, Helvetica, sans-serif;
+
+    font-size: 14px;
+
+    color: #777;
+}
+
+
+/* =========================
+   PRODUCT INFO
+========================= */
+
+.product-info {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    border-top: 1px solid #e5e5e5;
+
+    margin-bottom: 30px;
+}
+
+
+.product-info div {
+    padding: 15px 10px 15px 0;
+
+    border-bottom: 1px solid #e5e5e5;
+}
+
+
+.product-info strong {
+    display: block;
+
+    margin-bottom: 5px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    color: #333;
+}
+
+
+.product-info span {
+    display: block;
+
+    color: #777;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.contact-button {
+    padding: 15px 35px;
+
+    border: none;
+
+    background: #9a7b4f;
+
+    color: white;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+
+.contact-button:hover {
+    background: #80643e;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   LOADING / NOT FOUND
+========================= */
+
+.product-loading {
+    min-height: 70vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 25px;
+
+    color: #777;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+    .product-details {
+        padding: 40px 5%;
+    }
+
+    .product-details-container {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+    }
+
+    .product-details-image {
+        height: 500px;
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .product-details {
+        padding: 30px 5%;
+    }
+
+    .back-button {
+        margin-bottom: 25px;
+    }
+
+    .product-details-container {
+        gap: 30px;
+    }
+
+    .product-details-image {
+        height: 350px;
+    }
+
+    .product-details-content h1 {
+        font-size: 38px;
+    }
+
+    .product-description {
+        font-size: 14px;
+    }
+
+    .product-price {
+        font-size: 28px;
+    }
+
+    .product-info {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-button {
+        width: 100%;
+    }
+
+}

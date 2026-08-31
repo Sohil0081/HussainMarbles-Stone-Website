@@ -1,0 +1,239 @@
+/* =========================
+   PRODUCTS PAGE
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+.products-page {
+    width: 100%;
+    min-height: 100vh;
+
+    background: #fff;
+    color: #292929;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.products-header {
+    width: 90%;
+    max-width: 900px;
+
+    margin: 0 auto;
+
+    padding: 80px 0 60px;
+
+    text-align: center;
+}
+
+.products-label {
+    display: inline-block;
+
+    margin-bottom: 15px;
+
+    color: #9a7b4f;
+
+    font-size: 12px;
+    font-weight: 600;
+
+    letter-spacing: 3px;
+}
+
+.products-header h1 {
+    margin: 0 0 18px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(42px, 6vw, 65px);
+
+    font-weight: 500;
+
+    line-height: 1.1;
+}
+
+.products-header p {
+    max-width: 600px;
+
+    margin: auto;
+
+    color: #777;
+
+    font-size: 15px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================
+   PRODUCTS SECTION
+========================= */
+
+.products-section {
+    width: 90%;
+    max-width: 1200px;
+
+    margin: 0 auto 100px;
+}
+
+
+/* =========================
+   PRODUCTS GRID
+========================= */
+
+.products-grid {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+
+    gap: 30px;
+
+    align-items: start;
+}
+
+
+/* =========================
+   PRODUCT CARD WRAPPER
+========================= */
+
+.product-area {
+    width: 100%;
+    min-width: 0;
+
+    display: flex;
+}
+
+
+/* Make Card fill grid cell */
+
+.product-area .post-card {
+    width: 100%;
+    max-width: none;
+}
+
+
+/* =========================
+   LOADING
+========================= */
+
+.products-loading {
+    width: 100%;
+    min-height: 60vh;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    color: #9a7b4f;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 22px;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 900px) {
+
+    .products-header {
+        padding: 65px 0 45px;
+    }
+
+    .products-section {
+        width: 92%;
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 22px;
+    }
+
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .products-header {
+        width: 90%;
+
+        padding: 55px 0 40px;
+    }
+
+    .products-header h1 {
+        font-size: 40px;
+    }
+
+    .products-header p {
+        font-size: 14px;
+
+        line-height: 1.7;
+    }
+
+    .products-section {
+        width: 94%;
+
+        margin-bottom: 65px;
+    }
+
+    /* EXACTLY 2 CARDS PER ROW */
+
+    .products-grid {
+        width: 100%;
+
+        display: grid;
+
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 14px;
+
+        align-items: start;
+    }
+
+    .product-area {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .product-area .post-card {
+        width: 100%;
+        max-width: none;
+    }
+
+}
+
+
+/* =========================
+   SMALL MOBILE
+========================= */
+
+@media (max-width: 400px) {
+
+    .products-header h1 {
+        font-size: 35px;
+    }
+
+    .products-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+
+        gap: 10px;
+    }
+
+}

@@ -1,0 +1,30 @@
+[
+    {
+        "name": "Dholpur Red Sandstone",
+        "origin_state": "Rajasthan",
+        "description": "Warm red sandstone quarried around Dholpur, known for its fine texture and traditional architectural appearance.",
+        "image": "/ProductsImages/Dholpur Red Sandstone.jpeg",
+        "category": "Sandstone"
+    },
+    {
+        "name": "Modak Sandstone",
+        "origin_state": "Rajasthan",
+        "description": "Soft pink and reddish sandstone featuring natural tonal variation and a smooth visual character.",
+        "image": "/ProductsImages/Modak Sandstone.png",
+        "category": "Sandstone"
+    },
+    {
+        "name": "Dholpur Beige Sandstone",
+        "origin_state": "Rajasthan",
+        "description": "Light beige variation of Dholpur sandstone with a calm neutral appearance suited to contemporary architectural designs.",
+        "image": "/ProductsImages/Dholpur Beige Sandstone.png",
+        "category": "Sandstone"
+    },
+    {
+        "name": "Bundi Golden Sandstone",
+        "origin_state": "Rajasthan",
+        "description": "Golden and honey-colored sandstone inspired by the natural stone of the Bundi region, ideal for warm decorative and architectural finishes.",
+        "image": "/ProductsImages/Bundi Golden Sandstone.png",
+        "category": "Sandstone"
+    }
+]

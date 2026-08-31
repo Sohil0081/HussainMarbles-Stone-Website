@@ -24,7 +24,8 @@
     width: 100%;
     height: 100%;
 
-    transition: transform 0.5s ease-in-out;
+    /* Slower & smoother slide */
+    transition: transform 1.2s cubic-bezier(0.65, 0, 0.35, 1);
 }
 
 
@@ -56,6 +57,14 @@
     display: block;
 
     pointer-events: none;
+
+    /* Slight transparency */
+    opacity: 0.94;
+
+    /* Smooth image effect */
+    transition:
+        opacity 1.2s ease,
+        transform 1.5s ease;
 }
 
 
@@ -88,7 +97,6 @@
 .slide-content {
 
     position: absolute;
-
     z-index: 2;
 
     left: 7%;
@@ -158,6 +166,16 @@
     cursor: pointer;
 
     text-align: center;
+
+    transition: all 0.3s ease;
+}
+
+
+.slide-content button:hover {
+
+    background: #80643e;
+
+    transform: translateY(-2px);
 }
 
 
@@ -196,7 +214,7 @@
 
     cursor: pointer;
 
-    transition: 0.3s;
+    transition: all 0.3s ease;
 }
 
 

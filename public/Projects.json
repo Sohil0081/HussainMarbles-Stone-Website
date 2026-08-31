@@ -1,0 +1,129 @@
+[
+    {
+        "id": 1,
+        "title": "Premium Stone Facade",
+        "category": "Exterior Stone Work",
+        "image": "/ProjectsImage/1.webp",
+        "description": "Natural stone facade installation that adds a warm, premium and architectural look to the building exterior."
+    },
+{
+    "id": 2,
+    "title": "Brick Wall Cladding",
+    "category": "Brick Cladding",
+    "image": "/ProjectsImage/10.webp",
+    "description": "Clean brick cladding that delivers a classic architectural appearance with a warm and durable exterior finish."
+},
+    {
+        "id": 3,
+        "title": "Decorative Stone Fountain",
+        "category": "Landscape Stone Work",
+        "image": "/ProjectsImage/3.webp",
+        "description": "Creative stonework combined with natural rocks and water elements to create an attractive landscape feature."
+    },
+    {
+        "id": 4,
+        "title": "Natural Stone Cladding",
+        "category": "Exterior Cladding",
+        "image": "/ProjectsImage/4.webp",
+        "description": "Natural stone cladding with earthy textures, giving walls a durable finish and a distinctive natural appearance."
+    },
+    {
+        "id": 5,
+        "title": "Landscape Stone Wall",
+        "category": "Landscaping",
+        "image": "/ProjectsImage/5.webp",
+        "description": "Textured stone retaining and boundary walls designed to complement surrounding greenery and outdoor spaces."
+    },
+    {
+        "id": 6,
+        "title": "Cobblestone Pattern Paving",
+        "category": "Pattern Paving",
+        "image": "/ProjectsImage/6.webp",
+        "description": "Precision-laid cobblestones arranged in flowing circular patterns for a decorative and durable paved surface."
+    },
+    {
+        "id": 7,
+        "title": "Rustic Stone Wall",
+        "category": "Masonry Work",
+        "image": "/ProjectsImage/7.webp",
+        "description": "Hand-finished mixed stone masonry creating a rugged, natural wall that blends beautifully with the landscape."
+    },
+    {
+        "id": 8,
+        "title": "Interior Stone Wall",
+        "category": "Interior Stone Work",
+        "image": "/ProjectsImage/8.webp",
+        "description": "Dark natural stone adds warmth, texture, and a premium character to modern interiors."
+    },
+    {
+        "id": 9,
+        "title": "Stone Wall Cladding",
+        "category": "Exterior Stone Work",
+        "image": "/ProjectsImage/9.webp",
+        "description": "Natural slate-style stone cladding creating a rugged, textured finish for exterior walls."
+    },
+    {
+        "id": 10,
+        "title": "Interior Stone Work",
+        "category": "Interior Cladding",
+        "image": "/ProjectsImage/2.webp",
+        "description": "Elegant stone detailing for modern interiors, combining natural textures with a clean contemporary finish."
+    },
+    {
+        "id": 11,
+        "title": "Cobblestone Work",
+        "category": "Stone Paving",
+        "image": "/ProjectsImage/11.webp",
+        "description": "Circular-pattern cobblestone paving crafted with natural stone for a strong and distinctive finish."
+    },
+    {
+        "id": 12,
+        "title": "Natural Stone Cladding",
+        "category": "Wall Cladding",
+        "image": "/ProjectsImage/12.webp",
+        "description": "Precisely fitted natural stone pieces creating a clean, durable, and sophisticated wall finish."
+    },
+    {
+        "id": 13,
+        "title": "Decorative Cobblestone Path",
+        "category": "Pathway Paving",
+        "image": "/ProjectsImage/13.webp",
+        "description": "Custom cobblestone pathway featuring curved geometric patterns and contrasting stone borders."
+    },
+    {
+        "id": 14,
+        "title": "Flagstone Flooring",
+        "category": "Stone Flooring",
+        "image": "/ProjectsImage/14.webp",
+        "description": "Irregular natural stone pieces arranged with clean joints for a rustic and elegant outdoor flooring finish."
+    },
+    {
+        "id": 15,
+        "title": "Cobblestone Paving",
+        "category": "Paving Work",
+        "image": "/ProjectsImage/15.webp",
+        "description": "Carefully arranged cobblestones forming durable curved patterns for pathways, driveways and outdoor spaces."
+    },
+    {
+        "id": 16,
+        "title": "Stone Mosaic Wall",
+        "category": "Stone Paving",
+        "image": "/ProjectsImage/16.webp",
+        "description": "Durable natural stone paving crafted for beautiful outdoor spaces."
+    },
+    {
+        "id": 17,
+        "title": "Slate Stone Wall",
+        "category": "Mosaic Stone Work",
+        "image": "/ProjectsImage/17.webp",
+        "description": "Detailed small-format stone installation creating a rich textured surface with a distinctive handcrafted appearance."
+    },
+    {
+        "id": 18,
+        "title": "Natural Stone Boundary Wall",
+        "category": "Stone Wall Work",
+        "image": "/ProjectsImage/18.webp",
+        "description": "Hand-laid natural stone masonry creating a timeless and durable boundary wall with traditional character."
+    }
+]
+
