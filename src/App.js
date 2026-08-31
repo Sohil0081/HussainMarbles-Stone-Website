@@ -7,7 +7,11 @@ import Products from './Components/Products';
 import ProductDetails from './Components/ProductDetails';
 import Projects from "./Components/Projects";
 
-import Home from './Tabs/Home';
+import Pallete from './Components/Pallete';
+import Category from './Components/Category';
+import WhatsAppButton from './Components/WhatsAppButton';
+import HomeContact from './Components/HomeContact';
+import Footer from './Components/Footer';
 
 import ScrollToTop from './Components/ScrollToTop';
 
@@ -39,7 +43,15 @@ function App() {
 
         <Route
           path="/"
-          element={<Home />}
+          element={
+            <>
+              <Pallete />
+              <Category />
+              <HomeContact />
+              <Footer />
+              <WhatsAppButton />
+            </>
+          }
         />
 
         <Route path="/projects" element={<Projects />} />

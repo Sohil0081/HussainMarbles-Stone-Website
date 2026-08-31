@@ -186,9 +186,7 @@ function HomeContact() {
                         {/* =================================
                             NAME + PHONE
                         ================================= */}
-
                         <div className="home-form-row">
-
                             <input
                                 type="text"
                                 name="name"
@@ -202,7 +200,6 @@ function HomeContact() {
                                 placeholder="Phone Number"
                                 required
                             />
-
                         </div>
 
 

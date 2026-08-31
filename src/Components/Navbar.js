@@ -1,113 +1,44 @@
-import React, { useState } from "react";
-import "./Navbar.css";
+import React from "react";
 import { Link } from "react-router-dom";
+import "./Navbar.css";
 
 function Navbar() {
 
-  const [menuOpen, setMenuOpen] = useState(false);
-
-  // Close menu when navigating
-  const handleNavigation = () => {
-    setMenuOpen(false);
-  };
-
   return (
-
     <nav className="navbar">
 
-      {/* =========================
-                LOGO
-      ========================= */}
+      {/* Website Name */}
 
-      <div className="logo">
-
-        <h2>
-          <Link
-            to="/"
-            onClick={handleNavigation}
-          >
-            Hussain Marble & Stones
-          </Link>
-        </h2>
-
+      <div className="navbar-logo">
+        <Link to="/">
+          Hussain Marble & Stones
+        </Link>
       </div>
 
 
-      {/* =========================
-                HAMBURGER
-      ========================= */}
+      {/* Navigation Tabs */}
 
-      <button
-        className={`hamburger ${menuOpen ? "active" : ""}`}
-        onClick={() => setMenuOpen(!menuOpen)}
-      >
+      <div className="navbar-links">
 
-        <span></span>
-        <span></span>
-        <span></span>
-
-      </button>
-
-
-      {/* =========================
-                NAVIGATION
-      ========================= */}
-
-      <div
-        className={`right ${menuOpen ? "menu-open" : ""}`}
-      >
-
-        {/* =========================
-                    HOME
-        ========================= */}
-
-        <Link
-          to="/"
-          onClick={handleNavigation}
-        >
+        <Link to="/">
           Home
         </Link>
 
-
-        {/* =========================
-                    PROJECTS
-        ========================= */}
-
-        <Link
-          to="/projects"
-          onClick={handleNavigation}
-        >
+        <Link to="/projects">
           Projects
         </Link>
 
-
-        {/* =========================
-                    ABOUT
-        ========================= */}
-
-        <Link
-          to="/about"
-          onClick={handleNavigation}
-        >
+        <Link to="/about">
           About
         </Link>
 
-
-        {/* =========================
-                    CONTACT
-        ========================= */}
-
-        <Link
-          to="/contact"
-          onClick={handleNavigation}
-        >
+        <Link to="/contact">
           Contact
         </Link>
 
       </div>
 
     </nav>
-
   );
 }
 
