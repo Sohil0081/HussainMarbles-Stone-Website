@@ -41,7 +41,9 @@ body {
     padding: 0 7%;
 
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
 
     background: #ffffff;
@@ -75,6 +77,7 @@ body {
         serif;
 
     font-size: 27px;
+
     font-weight: 500;
 
     letter-spacing: 2.5px;
@@ -105,6 +108,7 @@ body {
     position: relative;
 
     display: flex;
+
     align-items: center;
 
     height: 82px;
@@ -119,6 +123,7 @@ body {
         sans-serif;
 
     font-size: 11px;
+
     font-weight: 600;
 
     letter-spacing: 1.7px;
@@ -139,15 +144,16 @@ body {
     position: absolute;
 
     left: 0;
+
     bottom: 24px;
 
     width: 0;
+
     height: 1px;
 
     background: #967a58;
 
-    transition:
-        width 0.3s ease;
+    transition: width 0.3s ease;
 }
 
 .navbar-links a:hover {
@@ -193,16 +199,26 @@ body {
 
 @media (max-width: 700px) {
 
+    /* -----------------------------------------------------
+       BODY
+    ----------------------------------------------------- */
+
     body {
         padding-top: 112px;
+
+        /*
+           When navbar shrinks from 112px → 62px,
+           the page gets the extra 50px naturally.
+        */
     }
 
 
-    /* =====================================================
+    /* -----------------------------------------------------
        NAVBAR
-    ===================================================== */
+    ----------------------------------------------------- */
 
     .navbar {
+
         width: 100%;
 
         height: 112px;
@@ -216,17 +232,27 @@ body {
         justify-content: flex-start;
 
         align-items: center;
+
+        background: #ffffff;
+
+        overflow: hidden;
+
+        transition: height 0.25s ease;
     }
 
 
-    /* =====================================================
+    /* -----------------------------------------------------
        WEBSITE NAME
-    ===================================================== */
+       THIS PART NEVER MOVES
+    ----------------------------------------------------- */
 
     .navbar-logo {
+
         width: 100%;
 
         height: 62px;
+
+        min-height: 62px;
 
         display: flex;
 
@@ -235,9 +261,12 @@ body {
         justify-content: center;
 
         border-bottom: 1px solid #ebe8e2;
+
+        flex-shrink: 0;
     }
 
     .navbar-logo a {
+
         font-size: 20px;
 
         letter-spacing: 1.5px;
@@ -246,14 +275,17 @@ body {
     }
 
 
-    /* =====================================================
-       MOBILE TABS
-    ===================================================== */
+    /* -----------------------------------------------------
+       TAB BOX
+    ----------------------------------------------------- */
 
     .navbar-links {
+
         width: 100%;
 
         height: 50px;
+
+        min-height: 50px;
 
         display: flex;
 
@@ -264,10 +296,27 @@ body {
         gap: 0;
 
         padding: 0 10px;
+
+        background: #ffffff;
+
+        flex-shrink: 0;
+
+        transform: translateY(0);
+
+        opacity: 1;
+
+        transition:
+            transform 0.25s ease,
+            opacity 0.2s ease;
     }
 
 
+    /* -----------------------------------------------------
+       TAB LINKS
+    ----------------------------------------------------- */
+
     .navbar-links a {
+
         height: 50px;
 
         display: flex;
@@ -284,10 +333,53 @@ body {
     }
 
 
-    /* Remove desktop underline position */
+    /* -----------------------------------------------------
+       MOBILE UNDERLINE
+    ----------------------------------------------------- */
 
     .navbar-links a::after {
+
         bottom: 8px;
+    }
+
+
+    /* =====================================================
+       SCROLL DOWN
+       HIDE ONLY LOWER TAB BOX
+    ===================================================== */
+
+    .navbar.navbar-tabs-hidden {
+
+        height: 62px;
+    }
+
+    .navbar.navbar-tabs-hidden .navbar-links {
+
+        transform: translateY(-50px);
+
+        opacity: 0;
+
+        pointer-events: none;
+    }
+
+
+    /* =====================================================
+       SCROLL UP
+       SHOW LOWER TAB BOX
+    ===================================================== */
+
+    .navbar.navbar-tabs-visible {
+
+        height: 112px;
+    }
+
+    .navbar.navbar-tabs-visible .navbar-links {
+
+        transform: translateY(0);
+
+        opacity: 1;
+
+        pointer-events: auto;
     }
 }
 
@@ -302,33 +394,46 @@ body {
         padding-top: 108px;
     }
 
+
     .navbar {
         height: 108px;
     }
 
 
-    /* Website name */
+    /* -----------------------------------------------------
+       WEBSITE NAME
+    ----------------------------------------------------- */
 
     .navbar-logo {
+
         height: 60px;
+
+        min-height: 60px;
     }
 
     .navbar-logo a {
+
         font-size: 18px;
 
         letter-spacing: 1.2px;
     }
 
 
-    /* Tabs */
+    /* -----------------------------------------------------
+       TABS
+    ----------------------------------------------------- */
 
     .navbar-links {
+
         height: 48px;
+
+        min-height: 48px;
 
         padding: 0 5px;
     }
 
     .navbar-links a {
+
         height: 48px;
 
         padding: 0 5px;
@@ -336,5 +441,30 @@ body {
         font-size: 8.5px;
 
         letter-spacing: 0.7px;
+    }
+
+
+    /* -----------------------------------------------------
+       HIDDEN NAVBAR
+    ----------------------------------------------------- */
+
+    .navbar.navbar-tabs-hidden {
+
+        height: 60px;
+    }
+
+    .navbar.navbar-tabs-hidden .navbar-links {
+
+        transform: translateY(-48px);
+    }
+
+
+    /* -----------------------------------------------------
+       VISIBLE NAVBAR
+    ----------------------------------------------------- */
+
+    .navbar.navbar-tabs-visible {
+
+        height: 108px;
     }
 }
