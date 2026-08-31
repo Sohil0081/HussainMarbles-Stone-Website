@@ -35,11 +35,10 @@
 
 .slide {
     position: relative;
-
-    min-width: 100%;
+    flex: 0 0 100%;
     width: 100%;
+    min-width: 0;
     height: 100%;
-
     overflow: hidden;
 }
 
