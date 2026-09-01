@@ -8,9 +8,9 @@ export default function Card(props) {
 
     const {
         id,
-        name,
-        origin,
+        title,
         image,
+        description,
         rating,
         onClick
     } = props;
@@ -38,7 +38,7 @@ export default function Card(props) {
                         : "https://placehold.co/600x400?text=Image+Not+Available"
                 }
                 className="post-image"
-                alt={name}
+                alt={title}
                 onError={(e) => {
                     e.currentTarget.src =
                         "https://placehold.co/600x400?text=Image+Not+Available";
@@ -53,12 +53,12 @@ export default function Card(props) {
             <div className="post-body">
 
                 <h2 className="post-title">
-                    {name}
+                    {title}
                 </h2>
 
 
                 <p className="post-description">
-                    {origin}
+                    {description}
                 </p>
 
 

@@ -1,17 +1,229 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
+import { useLocation } from "react-router-dom";
 import "./HomeContact.css";
 
 function HomeContact() {
 
     const form = useRef();
+
+    const location = useLocation();
+
     const [status, setStatus] = useState("");
+
+    const [selectedProduct, setSelectedProduct] = useState("");
+
+    const [errors, setErrors] = useState({
+        email: "",
+        phone: ""
+    });
+
+    const [sending, setSending] = useState(false);
+
+
+    /* =================================
+       CATEGORY MAPPING
+    ================================= */
+
+    const categoryMap = {
+
+        "Sandstone":
+            "Sandstone & Texture Stone",
+
+        "Stone-Cladding":
+            "Natural Stone Cladding",
+
+        "Stone-Inlay":
+            "Marble & Stone Inlay",
+
+        "Stone-Paving":
+            "Stone Paving & Cobblestone",
+
+        "Stone-Panel":
+            "3D / Decorative Stone Panels",
+
+        "Rocks-Mineral":
+            "Rocks & Mineral"
+
+    };
+
+
+    /* =================================
+       HANDLE PRODUCT ENQUIRY
+    ================================= */
+
+    useEffect(() => {
+
+        const category =
+            location.state?.productCategory;
+
+        if (category) {
+
+            const mappedCategory =
+                categoryMap[category];
+
+            if (mappedCategory) {
+
+                setSelectedProduct(mappedCategory);
+
+            }
+
+        }
+
+
+        /* =================================
+           SCROLL TO CONTACT
+        ================================= */
+
+        if (location.state?.scrollToContact) {
+
+            setTimeout(() => {
+
+                const contactSection =
+                    document.querySelector(".home-contact");
+
+                if (contactSection) {
+
+                    contactSection.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start"
+                    });
+
+                }
+
+            }, 200);
+
+        }
+
+    }, [location]);
+
+
+    /* =================================
+       VALIDATE FORM
+    ================================= */
+
+    const validateForm = () => {
+
+        const formData =
+            new FormData(form.current);
+
+        const email =
+            formData.get("email").trim();
+
+        const phone =
+            formData.get("phone").trim();
+
+
+        /* =================================
+           VALIDATION REGEX
+        ================================= */
+
+        const emailRegex =
+            /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+        const phoneRegex =
+            /^[6-9]\d{9}$/;
+
+
+        const newErrors = {
+            email: "",
+            phone: ""
+        };
+
+
+        /* =================================
+           EMAIL VALIDATION
+        ================================= */
+
+        if (!email) {
+
+            newErrors.email =
+                "Email address is required.";
+
+        }
+        else if (!emailRegex.test(email)) {
+
+            newErrors.email =
+                "Please enter a valid email address.";
+
+        }
+
+
+        /* =================================
+           PHONE VALIDATION
+        ================================= */
+
+        if (!phone) {
+
+            newErrors.phone =
+                "Phone number is required.";
+
+        }
+        else if (!phoneRegex.test(phone)) {
+
+            newErrors.phone =
+                "Please enter a valid 10-digit mobile number.";
+
+        }
+
+
+        setErrors(newErrors);
+
+
+        return (
+            !newErrors.email &&
+            !newErrors.phone
+        );
+
+    };
+
+
+    /* =================================
+       SEND EMAIL
+    ================================= */
 
     const sendEmail = (e) => {
 
         e.preventDefault();
 
+
+        /* =================================
+           STOP IF ALREADY SENDING
+        ================================= */
+
+        if (sending) {
+            return;
+        }
+
+
+        /* =================================
+           VALIDATE
+        ================================= */
+
+        const isValid =
+            validateForm();
+
+        if (!isValid) {
+
+            setStatus("");
+
+            return;
+
+        }
+
+
+        /* =================================
+           START SENDING
+        ================================= */
+
+        setSending(true);
+
         setStatus("Sending...");
+
+
+        /* =================================
+           SEND THROUGH EMAILJS
+        ================================= */
 
         emailjs
             .sendForm(
@@ -23,23 +235,43 @@ function HomeContact() {
                 }
             )
             .then(
+
                 () => {
 
-                    setStatus("✓ Enquiry sent successfully!");
+                    setStatus(
+                        "✓ Enquiry sent successfully!"
+                    );
 
                     e.target.reset();
 
+                    setSelectedProduct("");
+
+                    setErrors({
+                        email: "",
+                        phone: ""
+                    });
+
+                    setSending(false);
+
                 },
+
                 (error) => {
 
-                    console.error("EmailJS Error:", error);
+                    console.error(
+                        "EmailJS Error:",
+                        error
+                    );
 
                     setStatus(
                         "Something went wrong. Please try again."
                     );
 
+                    setSending(false);
+
                 }
+
             );
+
     };
 
 
@@ -48,6 +280,7 @@ function HomeContact() {
         <section className="home-contact">
 
             <div className="home-contact-inner">
+
 
                 {/* =================================
                     LEFT CONTENT
@@ -59,11 +292,13 @@ function HomeContact() {
                         GET IN TOUCH
                     </span>
 
+
                     <h2>
                         Find the perfect
                         <br />
                         stone for your space.
                     </h2>
+
 
                     <p>
                         Looking for the right marble or natural stone?
@@ -79,7 +314,7 @@ function HomeContact() {
                     <div className="home-contact-details">
 
                         <a
-                            href="tel:+919876543210"
+                            href="tel:+918368231122"
                             className="home-contact-detail"
                         >
 
@@ -88,7 +323,7 @@ function HomeContact() {
                             </span>
 
                             <span>
-                                +91 836 823 1122
+                                +91 8368231122
                             </span>
 
                         </a>
@@ -113,7 +348,7 @@ function HomeContact() {
 
 
                     {/* =================================
-                        GOOGLE MAPS BUTTON
+                        GOOGLE MAPS
                     ================================= */}
 
                     <a
@@ -127,6 +362,7 @@ function HomeContact() {
                             Visit Our Showroom
                         </span>
 
+
                         <span className="direction-icon">
 
                             <img
@@ -134,19 +370,24 @@ function HomeContact() {
                                 alt="Google Maps"
                                 onError={(e) => {
 
-                                    e.currentTarget.style.display = "none";
+                                    e.currentTarget.style.display =
+                                        "none";
 
                                     const fallback =
-                                        e.currentTarget.nextElementSibling;
+                                        e.currentTarget
+                                            .nextElementSibling;
 
                                     if (fallback) {
-                                        fallback.style.display = "flex";
+
+                                        fallback.style.display =
+                                            "flex";
+
                                     }
 
                                 }}
                             />
 
-                            {/* FALLBACK ARROW */}
+
                             <span className="direction-arrow-fallback">
                                 ↗
                             </span>
@@ -163,6 +404,7 @@ function HomeContact() {
                 ================================= */}
 
                 <div className="home-contact-form-wrapper">
+
 
                     <div className="home-form-heading">
 
@@ -183,23 +425,46 @@ function HomeContact() {
                         onSubmit={sendEmail}
                     >
 
+
                         {/* =================================
                             NAME + PHONE
                         ================================= */}
-                        <div className="home-form-row">
-                            <input
-                                type="text"
-                                name="name"
-                                placeholder="Your Name"
-                                required
-                            />
 
-                            <input
-                                type="tel"
-                                name="phone"
-                                placeholder="Phone Number"
-                                required
-                            />
+                        <div className="home-form-row">
+
+                            <div className="form-field">
+
+                                <input
+                                    type="text"
+                                    name="name"
+                                    placeholder="Your Name"
+                                    required
+                                />
+
+                            </div>
+
+
+                            <div className="form-field">
+
+                                <input
+                                    type="tel"
+                                    name="phone"
+                                    placeholder="Phone Number"
+                                    maxLength="10"
+                                    inputMode="numeric"
+                                    required
+                                />
+
+                                {errors.phone && (
+
+                                    <span className="form-error">
+                                        {errors.phone}
+                                    </span>
+
+                                )}
+
+                            </div>
+
                         </div>
 
 
@@ -207,47 +472,73 @@ function HomeContact() {
                             EMAIL
                         ================================= */}
 
-                        <input
-                            type="email"
-                            name="email"
-                            placeholder="Email Address"
-                            required
-                        />
+                        <div className="form-field">
+
+                            <input
+                                type="email"
+                                name="email"
+                                placeholder="Email Address"
+                                required
+                            />
+
+                            {errors.email && (
+
+                                <span className="form-error">
+                                    {errors.email}
+                                </span>
+
+                            )}
+
+                        </div>
 
 
                         {/* =================================
-                            PRODUCT
+                            PRODUCT CATEGORY
                         ================================= */}
 
                         <select
                             name="product"
-                            defaultValue=""
+                            value={selectedProduct}
+                            onChange={(e) =>
+                                setSelectedProduct(
+                                    e.target.value
+                                )
+                            }
                             required
                         >
 
-                            <option value="" disabled>
+                            <option
+                                value=""
+                                disabled
+                            >
                                 Interested In
                             </option>
+
 
                             <option value="Sandstone & Texture Stone">
                                 Sandstone & Texture Stone
                             </option>
 
+
                             <option value="Natural Stone Cladding">
                                 Natural Stone Cladding
                             </option>
+
 
                             <option value="Marble & Stone Inlay">
                                 Marble & Stone Inlay
                             </option>
 
+
                             <option value="Stone Paving & Cobblestone">
                                 Stone Paving & Cobblestone
                             </option>
 
+
                             <option value="3D / Decorative Stone Panels">
                                 3D / Decorative Stone Panels
                             </option>
+
 
                             <option value="Rocks & Mineral">
                                 Rocks & Mineral
@@ -275,10 +566,14 @@ function HomeContact() {
                         <button
                             type="submit"
                             className="home-contact-submit"
+                            disabled={sending}
                         >
 
                             <span>
-                                Send Enquiry
+                                {sending
+                                    ? "Sending..."
+                                    : "Send Enquiry"
+                                }
                             </span>
 
                         </button>
@@ -303,7 +598,9 @@ function HomeContact() {
             </div>
 
         </section>
+
     );
+
 }
 
 export default HomeContact;

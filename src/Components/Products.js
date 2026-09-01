@@ -50,7 +50,7 @@ function Products({ type = "All" }) {
 
         "Stone-Cladding": "Stone Cladding",
 
-        "Sone-Cladding": "Stone Cladding",
+        "Stone-Panel": "Stone Panel",
 
         "Stone-Inlay": "Stone Inlay",
 
@@ -131,12 +131,11 @@ function Products({ type = "All" }) {
 
                             <Card
                                 id={product.id}
-                                name={product.name}
-                                origin={product.origin}
+                                title={product.title}
+                                category={product.category}
                                 image={product.image}
-                                rating={product.rating}
-                                price={product.price}
                                 description={product.description}
+                                rating={product.rating}
                             />
 
                         </div>

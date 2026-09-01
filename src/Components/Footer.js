@@ -64,10 +64,10 @@ function Footer() {
 
                         <h4>COLLECTIONS</h4>
 
-                        <Link to="/products">White Marble</Link>
-                        <Link to="/products">Italian Marble</Link>
-                        <Link to="/products">Granite</Link>
+                        <Link to="/products">SandStone</Link>
                         <Link to="/products">Stone Inlay</Link>
+                        <Link to="/products">Stone Paving</Link>
+                        <Link to="/products">Stone Cladding</Link>
 
                     </div>
 
@@ -79,7 +79,7 @@ function Footer() {
 
                         <p>
                             <span>📍</span>
-                            New Delhi, India
+                            Delhi, India
                         </p>
 
                         <p>

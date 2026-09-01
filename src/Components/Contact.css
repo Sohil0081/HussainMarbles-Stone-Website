@@ -1,7 +1,7 @@
+
 /* =========================================================
    CONTACT PAGE — PREMIUM MARBLE / LUXURY DESIGN
 ========================================================= */
-
 
 /* =========================================================
    GLOBAL
@@ -18,7 +18,6 @@ html {
 .contact-page {
     width: 100%;
     min-height: 100vh;
-
     margin: 0;
     padding: 0;
 
@@ -79,14 +78,14 @@ html {
         url("https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=1800&q=85");
 
     background-size: cover;
-
     background-position: center;
-
     background-repeat: no-repeat;
 }
 
 
-/* Hero bottom shadow */
+/* =========================================================
+   HERO BOTTOM SHADOW
+========================================================= */
 
 .contact-hero::after {
     content: "";
@@ -118,23 +117,19 @@ html {
     max-width: 1200px;
 
     margin: 0 auto;
-
     padding: 100px 0;
 
     position: relative;
-
     z-index: 2;
 
-    color: white;
+    color: #ffffff;
 
     animation: contactHeroFade 1s ease forwards;
 }
 
-
 .contact-hero-content .contact-label {
     color: #e2c18a;
 }
-
 
 .contact-hero-content h1 {
     max-width: 850px;
@@ -151,7 +146,6 @@ html {
 
     line-height: 1.04;
 }
-
 
 .contact-hero-content p {
     max-width: 570px;
@@ -171,7 +165,6 @@ html {
 ========================================================= */
 
 @keyframes contactHeroFade {
-
     from {
         opacity: 0;
         transform: translateY(25px);
@@ -212,7 +205,6 @@ html {
     padding-top: 10px;
 }
 
-
 .contact-info h2 {
     max-width: 550px;
 
@@ -230,7 +222,9 @@ html {
 }
 
 
-/* Gold line */
+/* =========================================================
+   GOLD LINE
+========================================================= */
 
 .contact-info h2::after {
     content: "";
@@ -245,13 +239,12 @@ html {
     background: #9a7b4f;
 }
 
-
 .contact-info > p {
     max-width: 510px;
 
     margin: 0 0 42px;
 
-    color: #666;
+    color: #666666;
 
     font-size: 15px;
 
@@ -271,7 +264,6 @@ html {
     gap: 27px;
 }
 
-
 .contact-item {
     display: flex;
 
@@ -283,7 +275,6 @@ html {
 
     transition: transform 0.3s ease;
 }
-
 
 .contact-item:hover {
     transform: translateX(5px);
@@ -321,11 +312,10 @@ html {
         transform 0.3s ease;
 }
 
-
 .contact-item:hover .contact-icon {
     background: #9a7b4f;
 
-    color: white;
+    color: #ffffff;
 
     transform: scale(1.05);
 }
@@ -340,7 +330,7 @@ html {
 
     margin-bottom: 6px;
 
-    color: #888;
+    color: #888888;
 
     font-size: 11px;
 
@@ -351,12 +341,11 @@ html {
     letter-spacing: 1.5px;
 }
 
-
 .contact-item a,
 .contact-item p {
     margin: 0;
 
-    color: #333;
+    color: #333333;
 
     font-size: 15px;
 
@@ -366,7 +355,6 @@ html {
 
     transition: color 0.3s ease;
 }
-
 
 .contact-item a:hover {
     color: #9a7b4f;
@@ -395,10 +383,14 @@ html {
 
     box-shadow:
         0 20px 55px rgba(0, 0, 0, 0.08);
+
+    overflow: hidden;
 }
 
 
-/* Small decorative line */
+/* =========================================================
+   FORM DECORATION
+========================================================= */
 
 .contact-form-container::before {
     content: "";
@@ -424,6 +416,10 @@ html {
 }
 
 
+/* =========================================================
+   FORM ROW
+========================================================= */
+
 .form-row {
     display: grid;
 
@@ -433,17 +429,22 @@ html {
 }
 
 
+/* =========================================================
+   FORM GROUP
+========================================================= */
+
 .form-group {
+    width: 100%;
+
     margin-bottom: 22px;
 }
-
 
 .form-group label {
     display: block;
 
     margin-bottom: 9px;
 
-    color: #444;
+    color: #444444;
 
     font-size: 12px;
 
@@ -461,6 +462,7 @@ html {
 .form-group select,
 .form-group textarea {
     width: 100%;
+    max-width: 100%;
 
     padding: 15px 16px;
 
@@ -470,7 +472,7 @@ html {
 
     background: #ffffff;
 
-    color: #333;
+    color: #333333;
 
     border-radius: 0;
 
@@ -484,13 +486,11 @@ html {
         background 0.3s ease;
 }
 
-
 .form-group input:hover,
 .form-group select:hover,
 .form-group textarea:hover {
     border-color: #c8c0b5;
 }
-
 
 .form-group input:focus,
 .form-group select:focus,
@@ -501,10 +501,9 @@ html {
         0 0 0 3px rgba(154, 123, 79, 0.08);
 }
 
-
 .form-group input::placeholder,
 .form-group textarea::placeholder {
-    color: #aaa;
+    color: #aaaaaa;
 }
 
 
@@ -525,6 +524,8 @@ html {
     min-height: 140px;
 
     resize: vertical;
+
+    line-height: 1.6;
 }
 
 
@@ -543,7 +544,7 @@ html {
 
     background: #9a7b4f;
 
-    color: white;
+    color: #ffffff;
 
     cursor: pointer;
 
@@ -562,7 +563,6 @@ html {
         box-shadow 0.3s ease;
 }
 
-
 .contact-button:hover {
     background: #80643e;
 
@@ -572,9 +572,35 @@ html {
         0 10px 25px rgba(0, 0, 0, 0.12);
 }
 
-
 .contact-button:active {
     transform: translateY(0);
+}
+
+.contact-button:disabled {
+    opacity: 0.65;
+
+    cursor: not-allowed;
+
+    transform: none;
+}
+
+
+/* =========================================================
+   FORM STATUS
+========================================================= */
+
+.form-status {
+    margin: 16px 0 0;
+
+    text-align: center;
+
+    color: #9a7b4f;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    line-height: 1.5;
 }
 
 
@@ -584,9 +610,11 @@ html {
 
 .visit-section {
     width: 100%;
+
     min-height: 500px;
 
     display: flex;
+
     align-items: center;
 
     padding: 100px 7%;
@@ -606,7 +634,7 @@ html {
 
     background-repeat: no-repeat;
 
-    color: white;
+    color: #ffffff;
 }
 
 
@@ -616,6 +644,7 @@ html {
 
 .visit-content {
     width: 100%;
+
     max-width: 650px;
 
     position: relative;
@@ -623,11 +652,9 @@ html {
     z-index: 2;
 }
 
-
 .visit-content .contact-label {
     color: #dfbb80;
 }
-
 
 .visit-content h2 {
     max-width: 600px;
@@ -644,7 +671,6 @@ html {
 
     line-height: 1.08;
 }
-
 
 .visit-content p {
     max-width: 520px;
@@ -673,7 +699,7 @@ html {
 
     border: 1px solid rgba(255, 255, 255, 0.7);
 
-    color: white;
+    color: #ffffff;
 
     text-decoration: none;
 
@@ -690,13 +716,12 @@ html {
         transform 0.3s ease;
 }
 
-
 .map-button:hover {
-    background: white;
+    background: #ffffff;
 
-    border-color: white;
+    border-color: #ffffff;
 
-    color: #333;
+    color: #333333;
 
     transform: translateY(-3px);
 }
@@ -721,7 +746,6 @@ html {
         );
 }
 
-
 .contact-cta h2 {
     max-width: 750px;
 
@@ -737,7 +761,6 @@ html {
 
     line-height: 1.08;
 }
-
 
 .contact-cta .contact-label {
     color: #9a7b4f;
@@ -762,7 +785,7 @@ html {
 
     border: 1px solid #9a7b4f;
 
-    color: white;
+    color: #ffffff;
 
     text-decoration: none;
 
@@ -778,7 +801,6 @@ html {
         transform 0.3s ease,
         box-shadow 0.3s ease;
 }
-
 
 .cta-button:hover {
     background: transparent;
@@ -804,15 +826,26 @@ html {
         min-height: 560px;
     }
 
+    .contact-hero-content {
+        width: 88%;
+    }
+
 
     /* Contact */
 
     .contact-section {
-        gap: 50px;
+        width: 88%;
+
+        gap: 55px;
 
         margin: 90px auto;
+
+        grid-template-columns: 1fr;
     }
 
+    .contact-info {
+        max-width: 700px;
+    }
 
     .contact-form-container {
         padding: 35px;
@@ -843,13 +876,11 @@ html {
         background-position: 60% center;
     }
 
-
     .contact-hero-content {
         width: 88%;
 
         padding: 70px 0;
     }
-
 
     .contact-label {
         margin-bottom: 14px;
@@ -859,13 +890,13 @@ html {
         letter-spacing: 3px;
     }
 
-
     .contact-hero-content h1 {
         font-size: 42px;
 
         line-height: 1.08;
-    }
 
+        letter-spacing: -0.7px;
+    }
 
     .contact-hero-content p {
         font-size: 14px;
@@ -891,19 +922,25 @@ html {
     }
 
 
+    /* =====================================================
+       CONTACT INFO
+    ===================================================== */
+
+    .contact-info {
+        width: 100%;
+    }
+
     .contact-info h2 {
         font-size: 36px;
 
         line-height: 1.12;
     }
 
-
     .contact-info h2::after {
         width: 45px;
 
         margin-top: 20px;
     }
-
 
     .contact-info > p {
         font-size: 14px;
@@ -922,11 +959,9 @@ html {
         gap: 23px;
     }
 
-
     .contact-item {
         gap: 15px;
     }
-
 
     .contact-icon {
         width: 43px;
@@ -935,11 +970,9 @@ html {
         font-size: 16px;
     }
 
-
     .contact-item span {
         font-size: 10px;
     }
-
 
     .contact-item a,
     .contact-item p {
@@ -955,8 +988,9 @@ html {
         width: 100%;
 
         padding: 30px 22px;
-    }
 
+        overflow: hidden;
+    }
 
     .form-row {
         grid-template-columns: 1fr;
@@ -964,25 +998,27 @@ html {
         gap: 0;
     }
 
-
     .form-group {
         margin-bottom: 20px;
     }
 
+    .form-group label {
+        font-size: 11px;
+    }
 
     .form-group input,
     .form-group select,
     .form-group textarea {
+        width: 100%;
+
         padding: 14px;
 
         font-size: 14px;
     }
 
-
     .form-group textarea {
         min-height: 125px;
     }
-
 
     .contact-button {
         min-height: 48px;
@@ -1005,6 +1041,9 @@ html {
         background-attachment: scroll;
     }
 
+    .visit-content {
+        max-width: 100%;
+    }
 
     .visit-content h2 {
         font-size: 38px;
@@ -1012,13 +1051,11 @@ html {
         line-height: 1.12;
     }
 
-
     .visit-content p {
         font-size: 14px;
 
         line-height: 1.8;
     }
-
 
     .map-button {
         padding: 13px 25px;
@@ -1035,13 +1072,11 @@ html {
         padding: 75px 7%;
     }
 
-
     .contact-cta h2 {
         font-size: 38px;
 
         line-height: 1.12;
     }
-
 
     .cta-button {
         min-width: 145px;
@@ -1063,21 +1098,17 @@ html {
         min-height: 480px;
     }
 
-
     .contact-hero-content {
         width: 88%;
     }
-
 
     .contact-hero-content h1 {
         font-size: 36px;
     }
 
-
     .contact-hero-content p {
         font-size: 13px;
     }
-
 
     .contact-section {
         width: 92%;
@@ -1085,16 +1116,13 @@ html {
         margin: 60px auto;
     }
 
-
     .contact-info h2 {
         font-size: 32px;
     }
 
-
     .contact-form-container {
         padding: 25px 18px;
     }
-
 
     .visit-section {
         min-height: 430px;
@@ -1102,19 +1130,52 @@ html {
         padding: 65px 7%;
     }
 
-
     .visit-content h2 {
         font-size: 34px;
     }
-
 
     .contact-cta {
         padding: 65px 7%;
     }
 
-
     .contact-cta h2 {
         font-size: 33px;
+    }
+}
+
+
+/* =========================================================
+   VERY SMALL PHONES
+========================================================= */
+
+@media (max-width: 350px) {
+
+    .contact-hero-content h1 {
+        font-size: 33px;
+    }
+
+    .contact-section {
+        width: 94%;
+    }
+
+    .contact-info h2 {
+        font-size: 30px;
+    }
+
+    .contact-form-container {
+        padding: 22px 15px;
+    }
+
+    .contact-form-container::before {
+        width: 55px;
+    }
+
+    .visit-content h2 {
+        font-size: 31px;
+    }
+
+    .contact-cta h2 {
+        font-size: 30px;
     }
 }
 
@@ -1128,7 +1189,6 @@ html {
     html {
         scroll-behavior: auto;
     }
-
 
     .contact-hero-content,
     .contact-item,

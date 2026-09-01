@@ -8,45 +8,247 @@ function Contact() {
 
     const [status, setStatus] = useState("");
 
-    const sendEmail = (e) => {
+    const [errors, setErrors] = useState({
+        name: "",
+        phone: "",
+        email: "",
+        product: "",
+        message: ""
+    });
+
+
+    /* =================================
+       VALIDATION
+    ================================= */
+
+    const validateForm = (formData) => {
+
+        const newErrors = {
+            name: "",
+            phone: "",
+            email: "",
+            product: "",
+            message: ""
+        };
+
+        let isValid = true;
+
+
+        /* NAME */
+
+        const name = formData.name.trim();
+
+        if (!name) {
+
+            newErrors.name = "Please enter your name.";
+            isValid = false;
+
+        } else if (name.length < 2) {
+
+            newErrors.name = "Name must contain at least 2 characters.";
+            isValid = false;
+
+        } else if (!/^[a-zA-Z\s.'-]+$/.test(name)) {
+
+            newErrors.name = "Please enter a valid name.";
+            isValid = false;
+
+        }
+
+
+        /* PHONE */
+
+        const phone = formData.phone.trim();
+
+        // Accepts:
+        // 9876543210
+        // +919876543210
+        // +91 9876543210
+        // 09876543210
+
+        const cleanPhone = phone.replace(/[\s-]/g, "");
+
+        if (!phone) {
+
+            newErrors.phone = "Please enter your phone number.";
+            isValid = false;
+
+        } else if (!/^(\+91|91|0)?[6-9]\d{9}$/.test(cleanPhone)) {
+
+            newErrors.phone =
+                "Please enter a valid 10-digit Indian phone number.";
+
+            isValid = false;
+
+        }
+
+
+        /* EMAIL */
+
+        const email = formData.email.trim();
+
+        const emailRegex =
+            /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+        if (!email) {
+
+            newErrors.email = "Please enter your email address.";
+            isValid = false;
+
+        } else if (!emailRegex.test(email)) {
+
+            newErrors.email =
+                "Please enter a valid email address.";
+
+            isValid = false;
+
+        }
+
+
+        /* PRODUCT */
+
+        if (!formData.product) {
+
+            newErrors.product =
+                "Please select a product.";
+
+            isValid = false;
+
+        }
+
+
+        /* MESSAGE */
+
+        const message = formData.message.trim();
+
+        if (!message) {
+
+            newErrors.message =
+                "Please enter your message.";
+
+            isValid = false;
+
+        } else if (message.length < 10) {
+
+            newErrors.message =
+                "Message must contain at least 10 characters.";
+
+            isValid = false;
+
+        }
+
+
+        setErrors(newErrors);
+
+        return isValid;
+    };
+
+
+    /* =================================
+       SEND EMAIL
+    ================================= */
+
+    const sendEmail = async (e) => {
 
         e.preventDefault();
 
+        setStatus("");
+
+        const formData = {
+
+            name: e.target.name.value,
+            phone: e.target.phone.value,
+            email: e.target.email.value,
+            product: e.target.product.value,
+            message: e.target.message.value
+
+        };
+
+
+        /* =================================
+           VALIDATE BEFORE EMAILJS
+        ================================= */
+
+        const isValid = validateForm(formData);
+
+        if (!isValid) {
+
+            setStatus(
+                "Please correct the highlighted fields."
+            );
+
+            return;
+        }
+
+
+        /* =================================
+           SEND EMAIL
+        ================================= */
+
         setStatus("Sending...");
 
-        emailjs
-            .sendForm(
+
+        try {
+
+            await emailjs.sendForm(
+
                 "service_ocbezqc",
+
                 "template_79oee5f",
+
                 form.current,
+
                 {
                     publicKey: "GYFI6FA8XXVb-xNiG"
                 }
-            )
-            .then(
-                () => {
 
-                    setStatus("Enquiry sent successfully!");
-
-                    e.target.reset();
-
-                },
-                (error) => {
-
-                    console.error("EmailJS Error:", error);
-
-                    setStatus(
-                        "Something went wrong. Please try again."
-                    );
-
-                }
             );
+
+
+            /* =================================
+               SUCCESS
+            ================================= */
+
+            setStatus(
+                "✓ Enquiry sent successfully!"
+            );
+
+
+            e.target.reset();
+
+
+            setErrors({
+
+                name: "",
+                phone: "",
+                email: "",
+                product: "",
+                message: ""
+
+            });
+
+
+        } catch (error) {
+
+            console.error(
+                "EmailJS Error:",
+                error
+            );
+
+
+            setStatus(
+                "Something went wrong. Please try again."
+            );
+
+        }
+
     };
 
 
     return (
 
         <div className="contact-page">
+
 
             {/* =========================
                 CONTACT HERO
@@ -82,7 +284,10 @@ function Contact() {
 
             <section className="contact-section">
 
-                {/* Left Side */}
+
+                {/* =========================
+                    LEFT SIDE
+                ========================= */}
 
                 <div className="contact-info">
 
@@ -103,9 +308,12 @@ function Contact() {
                     </p>
 
 
-                    {/* Contact Details */}
+                    {/* CONTACT DETAILS */}
 
                     <div className="contact-details">
+
+
+                        {/* EMAIL */}
 
                         <div className="contact-item">
 
@@ -114,15 +322,21 @@ function Contact() {
                             </div>
 
                             <div>
-                                <span>Email</span>
+
+                                <span>
+                                    Email
+                                </span>
 
                                 <a href="mailto:info@marble.com">
                                     info@marble.com
                                 </a>
+
                             </div>
 
                         </div>
 
+
+                        {/* PHONE */}
 
                         <div className="contact-item">
 
@@ -131,15 +345,21 @@ function Contact() {
                             </div>
 
                             <div>
-                                <span>Phone</span>
 
-                                <a href="tel:+919876543210">
-                                    +91 98765 43210
+                                <span>
+                                    Phone
+                                </span>
+
+                                <a href="tel:+918368231122">
+                                    +91 8368231122
                                 </a>
+
                             </div>
 
                         </div>
 
+
+                        {/* ADDRESS */}
 
                         <div className="contact-item">
 
@@ -154,8 +374,8 @@ function Contact() {
                                 </span>
 
                                 <p>
-                                    Marble Market, Kishangarh,
-                                    Rajasthan, India
+                                    NH 148A, Arjan Garh, Aya Nagar,
+                                    Delhi 110047
                                 </p>
 
                             </div>
@@ -177,11 +397,18 @@ function Contact() {
                         ref={form}
                         className="contact-form"
                         onSubmit={sendEmail}
+                        noValidate
                     >
 
-                        {/* Name + Phone */}
+
+                        {/* =========================
+                            NAME + PHONE
+                        ========================= */}
 
                         <div className="form-row">
+
+
+                            {/* NAME */}
 
                             <div className="form-group">
 
@@ -193,11 +420,22 @@ function Contact() {
                                     type="text"
                                     name="name"
                                     placeholder="Enter your name"
+                                    autoComplete="name"
                                     required
                                 />
 
+                                {errors.name && (
+
+                                    <small className="form-error">
+                                        {errors.name}
+                                    </small>
+
+                                )}
+
                             </div>
 
+
+                            {/* PHONE */}
 
                             <div className="form-group">
 
@@ -209,15 +447,28 @@ function Contact() {
                                     type="tel"
                                     name="phone"
                                     placeholder="Enter your phone"
+                                    autoComplete="tel"
+                                    inputMode="numeric"
+                                    maxLength="15"
                                     required
                                 />
+
+                                {errors.phone && (
+
+                                    <small className="form-error">
+                                        {errors.phone}
+                                    </small>
+
+                                )}
 
                             </div>
 
                         </div>
 
 
-                        {/* Email */}
+                        {/* =========================
+                            EMAIL
+                        ========================= */}
 
                         <div className="form-group">
 
@@ -229,13 +480,24 @@ function Contact() {
                                 type="email"
                                 name="email"
                                 placeholder="Enter your email"
+                                autoComplete="email"
                                 required
                             />
+
+                            {errors.email && (
+
+                                <small className="form-error">
+                                    {errors.email}
+                                </small>
+
+                            )}
 
                         </div>
 
 
-                        {/* Product */}
+                        {/* =========================
+                            PRODUCT
+                        ========================= */}
 
                         <div className="form-group">
 
@@ -245,12 +507,17 @@ function Contact() {
 
                             <select
                                 name="product"
+                                defaultValue=""
                                 required
                             >
 
-                                <option value="">
+                                <option
+                                    value=""
+                                    disabled
+                                >
                                     Select a product
                                 </option>
+
                                 <option value="Sandstone & Texture Stone">
                                     Sandstone & Texture Stone
                                 </option>
@@ -277,10 +544,20 @@ function Contact() {
 
                             </select>
 
+                            {errors.product && (
+
+                                <small className="form-error">
+                                    {errors.product}
+                                </small>
+
+                            )}
+
                         </div>
 
 
-                        {/* Message */}
+                        {/* =========================
+                            MESSAGE
+                        ========================= */}
 
                         <div className="form-group">
 
@@ -295,24 +572,48 @@ function Contact() {
                                 required
                             ></textarea>
 
+                            {errors.message && (
+
+                                <small className="form-error">
+                                    {errors.message}
+                                </small>
+
+                            )}
+
                         </div>
 
 
-                        {/* Submit */}
+                        {/* =========================
+                            SUBMIT
+                        ========================= */}
 
                         <button
                             type="submit"
                             className="contact-button"
+                            disabled={status === "Sending..."}
                         >
-                            Send Enquiry
+
+                            {status === "Sending..."
+                                ? "Sending..."
+                                : "Send Enquiry"
+                            }
+
                         </button>
 
 
-                        {/* Status */}
+                        {/* =========================
+                            STATUS
+                        ========================= */}
 
                         {status && (
 
-                            <p className="form-status">
+                            <p
+                                className={
+                                    status.includes("successfully")
+                                        ? "form-status success"
+                                        : "form-status"
+                                }
+                            >
                                 {status}
                             </p>
 
