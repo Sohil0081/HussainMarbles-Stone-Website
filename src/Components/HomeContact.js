@@ -3,6 +3,30 @@ import emailjs from "@emailjs/browser";
 import { useLocation } from "react-router-dom";
 import "./HomeContact.css";
 
+
+
+const categoryMap = {
+
+    "Sandstone":
+        "Sandstone & Texture Stone",
+
+    "Stone-Cladding":
+        "Natural Stone Cladding",
+
+    "Stone-Inlay":
+        "Marble & Stone Inlay",
+
+    "Stone-Paving":
+        "Stone Paving & Cobblestone",
+
+    "Stone-Panel":
+        "3D / Decorative Stone Panels",
+
+    "Rocks-Mineral":
+        "Rocks & Mineral"
+
+};
+
 function HomeContact() {
 
     const form = useRef();
@@ -25,27 +49,6 @@ function HomeContact() {
        CATEGORY MAPPING
     ================================= */
 
-    const categoryMap = {
-
-        "Sandstone":
-            "Sandstone & Texture Stone",
-
-        "Stone-Cladding":
-            "Natural Stone Cladding",
-
-        "Stone-Inlay":
-            "Marble & Stone Inlay",
-
-        "Stone-Paving":
-            "Stone Paving & Cobblestone",
-
-        "Stone-Panel":
-            "3D / Decorative Stone Panels",
-
-        "Rocks-Mineral":
-            "Rocks & Mineral"
-
-    };
 
 
     /* =================================
