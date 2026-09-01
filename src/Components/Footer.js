@@ -95,6 +95,7 @@ function Footer() {
                     </div>
 
                 </div>
+                {/* updated */}
 
             </div>
 
