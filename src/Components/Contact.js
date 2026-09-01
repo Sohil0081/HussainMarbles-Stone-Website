@@ -251,33 +251,28 @@ function Contact() {
                                 <option value="">
                                     Select a product
                                 </option>
-
-                                <option value="White Marble">
-                                    White Marble
+                                <option value="Sandstone & Texture Stone">
+                                    Sandstone & Texture Stone
                                 </option>
 
-                                <option value="Brown Marble">
-                                    Brown Marble
+                                <option value="Natural Stone Cladding">
+                                    Natural Stone Cladding
                                 </option>
 
-                                <option value="Pink Marble">
-                                    Pink Marble
+                                <option value="Marble & Stone Inlay">
+                                    Marble & Stone Inlay
                                 </option>
 
-                                <option value="Black Marble">
-                                    Black Marble
+                                <option value="Stone Paving & Cobblestone">
+                                    Stone Paving & Cobblestone
                                 </option>
 
-                                <option value="Green Marble">
-                                    Green Marble
+                                <option value="3D / Decorative Stone Panels">
+                                    3D / Decorative Stone Panels
                                 </option>
 
-                                <option value="Golden Marble">
-                                    Golden Marble
-                                </option>
-
-                                <option value="Natural Stone">
-                                    Natural Stone
+                                <option value="Rocks & Mineral">
+                                    Rocks & Mineral
                                 </option>
 
                             </select>

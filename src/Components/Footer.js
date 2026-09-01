@@ -89,7 +89,7 @@ function Footer() {
 
                         <p>
                             <span>☎</span>
-                            +91 98765 43210
+                            +91 8368231122
                         </p>
 
                     </div>

@@ -3,7 +3,7 @@ import "./WhatsAppButton.css";
 
 function WhatsAppButton() {
 
-    const phoneNumber = "919876543210";
+    const phoneNumber = "918368231122";
 
     const message =
         "Hello, I am interested in your marble and natural stone products. Please share more details.";

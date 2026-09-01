@@ -6,120 +6,176 @@
         "image": "/ProjectsImage/1.webp",
         "description": "Natural stone facade installation that adds a warm, premium and architectural look to the building exterior."
     },
+    {
+        "id": 2,
+        "title": "Natural Stone Boundary Wall",
+        "category": "Stone Wall Work",
+        "image": "/ProjectsImage/19.webp",
+        "description": "Hand-laid natural stone masonry creating a strong and durable boundary wall with a traditional rustic finish."
+    },
 {
-    "id": 2,
+    "id": 3,
     "title": "Brick Wall Cladding",
     "category": "Brick Cladding",
     "image": "/ProjectsImage/10.webp",
     "description": "Clean brick cladding that delivers a classic architectural appearance with a warm and durable exterior finish."
 },
     {
-        "id": 3,
+        "id": 4,
         "title": "Decorative Stone Fountain",
         "category": "Landscape Stone Work",
         "image": "/ProjectsImage/3.webp",
         "description": "Creative stonework combined with natural rocks and water elements to create an attractive landscape feature."
     },
     {
-        "id": 4,
-        "title": "Natural Stone Cladding",
-        "category": "Exterior Cladding",
-        "image": "/ProjectsImage/4.webp",
-        "description": "Natural stone cladding with earthy textures, giving walls a durable finish and a distinctive natural appearance."
-    },
-    {
         "id": 5,
+        "title": "Natural Stone Waterfall",
+        "category": "Waterfall Stone Work",
+        "image": "/ProjectsImage/21.webp",
+        "description": "Beautiful multi-level natural stone waterfall creating a serene landscape feature with cascading water and a rustic outdoor finish."
+    },
+        {
+            "id": 6,
+            "title": "Slate Stone Wall",
+            "category": "Mosaic Stone Work",
+            "image": "/ProjectsImage/17.webp",
+            "description": "Detailed small-format stone installation creating a rich textured surface with a distinctive handcrafted appearance."
+        },
+    {
+        "id": 7,
         "title": "Landscape Stone Wall",
         "category": "Landscaping",
         "image": "/ProjectsImage/5.webp",
         "description": "Textured stone retaining and boundary walls designed to complement surrounding greenery and outdoor spaces."
     },
     {
-        "id": 6,
+        "id": 6.1,
+        "title": "Natural Stone Cladding",
+        "category": "Exterior Cladding",
+        "image": "/ProjectsImage/4.webp",
+        "description": "Natural stone cladding with earthy textures, giving walls a durable finish and a distinctive natural appearance."
+    },
+    {
+        "id": 8,
+        "title": "Illuminated Stone Water Feature",
+        "category": "Water Feature Work",
+        "image": "/ProjectsImage/23.webp",
+        "description": "Textured natural stone water feature enhanced with warm lighting, creating an elegant and relaxing outdoor focal point."
+    },
+    {
+        "id": 9,
+        "title": "Natural Stone Water Feature Wall",
+        "category": "Water Feature Work",
+        "image": "/ProjectsImage/24.webp",
+        "description": "Handcrafted natural stone water feature wall with a rustic textured finish and built-in water spout, creating an elegant and calming outdoor focal point."
+    },
+    {
+        "id": 10,
         "title": "Cobblestone Pattern Paving",
         "category": "Pattern Paving",
         "image": "/ProjectsImage/6.webp",
         "description": "Precision-laid cobblestones arranged in flowing circular patterns for a decorative and durable paved surface."
     },
     {
-        "id": 7,
+        "id": 11,
+        "title": "Natural Stone Cladding & Exterior Structure",
+        "category": "Stone Cladding Work",
+        "image": "/ProjectsImage/25.webp",
+        "description": "Natural stone cladding applied to exterior columns and walls, complemented by a modern covered structure and landscaped pebble flooring for a rustic yet contemporary architectural finish."
+    },
+    {
+        "id": 12,
         "title": "Rustic Stone Wall",
         "category": "Masonry Work",
         "image": "/ProjectsImage/7.webp",
         "description": "Hand-finished mixed stone masonry creating a rugged, natural wall that blends beautifully with the landscape."
     },
     {
-        "id": 8,
+        "id": 13,
+        "title": "Natural Stone Interior Accent Wall",
+        "category": "Stone Cladding Work",
+        "image": "/ProjectsImage/26.webp",
+        "description": "Elegant natural stone cladding creating a warm textured interior accent wall, complemented by contemporary seating and greenery for a refined, nature-inspired space."
+    },
+    {
+        "id": 14,
+        "title": "Natural Stone Exterior",
+        "category": "Stone Work",
+        "image": "/ProjectsImage/22.webp",
+        "description": "Beautiful multi-level natural stone work creating a serene landscape feature rustic outdoor finish."
+    },
+    {
+        "id": 15,
+        "title": "Luxury Stone Facade",
+        "category": "Stone Cladding Work",
+        "image": "/ProjectsImage/20.webp",
+        "description": "Elegant natural stone cladding enhancing the exterior walls with a premium, modern, and sophisticated architectural finish."
+    },
+    {
+        "id": 16,
         "title": "Interior Stone Wall",
         "category": "Interior Stone Work",
         "image": "/ProjectsImage/8.webp",
         "description": "Dark natural stone adds warmth, texture, and a premium character to modern interiors."
     },
     {
-        "id": 9,
+        "id": 17,
         "title": "Stone Wall Cladding",
         "category": "Exterior Stone Work",
         "image": "/ProjectsImage/9.webp",
         "description": "Natural slate-style stone cladding creating a rugged, textured finish for exterior walls."
     },
     {
-        "id": 10,
+        "id": 18,
         "title": "Interior Stone Work",
         "category": "Interior Cladding",
         "image": "/ProjectsImage/2.webp",
         "description": "Elegant stone detailing for modern interiors, combining natural textures with a clean contemporary finish."
     },
     {
-        "id": 11,
+        "id": 19,
         "title": "Cobblestone Work",
         "category": "Stone Paving",
         "image": "/ProjectsImage/11.webp",
         "description": "Circular-pattern cobblestone paving crafted with natural stone for a strong and distinctive finish."
     },
     {
-        "id": 12,
+        "id": 20,
         "title": "Natural Stone Cladding",
         "category": "Wall Cladding",
         "image": "/ProjectsImage/12.webp",
         "description": "Precisely fitted natural stone pieces creating a clean, durable, and sophisticated wall finish."
     },
     {
-        "id": 13,
+        "id": 21,
         "title": "Decorative Cobblestone Path",
         "category": "Pathway Paving",
         "image": "/ProjectsImage/13.webp",
         "description": "Custom cobblestone pathway featuring curved geometric patterns and contrasting stone borders."
     },
     {
-        "id": 14,
+        "id": 22,
         "title": "Flagstone Flooring",
         "category": "Stone Flooring",
         "image": "/ProjectsImage/14.webp",
         "description": "Irregular natural stone pieces arranged with clean joints for a rustic and elegant outdoor flooring finish."
     },
     {
-        "id": 15,
+        "id": 23,
         "title": "Cobblestone Paving",
         "category": "Paving Work",
         "image": "/ProjectsImage/15.webp",
         "description": "Carefully arranged cobblestones forming durable curved patterns for pathways, driveways and outdoor spaces."
     },
     {
-        "id": 16,
+        "id": 24,
         "title": "Stone Mosaic Wall",
         "category": "Stone Paving",
         "image": "/ProjectsImage/16.webp",
         "description": "Durable natural stone paving crafted for beautiful outdoor spaces."
     },
     {
-        "id": 17,
-        "title": "Slate Stone Wall",
-        "category": "Mosaic Stone Work",
-        "image": "/ProjectsImage/17.webp",
-        "description": "Detailed small-format stone installation creating a rich textured surface with a distinctive handcrafted appearance."
-    },
-    {
-        "id": 18,
+        "id": 26,
         "title": "Natural Stone Boundary Wall",
         "category": "Stone Wall Work",
         "image": "/ProjectsImage/18.webp",
